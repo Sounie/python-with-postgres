@@ -5,15 +5,12 @@ import psycopg
 
 
 def read_from_db():
-    conn = psycopg.connect("host=localhost dbname=docker user=docker password=my-local-pass")
-    cur = conn.cursor()
-    cur.execute("SELECT name FROM users limit 1;")
-    result = cur.fetchone()
+    with psycopg.connect("host=localhost dbname=docker user=docker password=my-local-pass") as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT name FROM users limit 1;")
+            result = cur.fetchone()
 
-    cur.close()
-    conn.close()
-    print(f'Hi, {result[0]}')
-
+            print(f'Hi, {result[0]}')
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
