@@ -6,4 +6,4 @@ Do the following to spin up a Postgresql database in a Docker container before r
 
 Likewise, to shutdown the database container, in another shell:
 
-> docker-componse down
+> docker-compose down
