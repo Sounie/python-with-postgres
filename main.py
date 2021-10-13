@@ -1,11 +1,11 @@
-import psycopg2
+import psycopg
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
 
 def read_from_db():
-    conn = psycopg2.connect("host=localhost dbname=docker user=docker password=my-local-pass")
+    conn = psycopg.connect("host=localhost dbname=docker user=docker password=my-local-pass")
     cur = conn.cursor()
     cur.execute("SELECT name FROM users limit 1;")
     result = cur.fetchone()
