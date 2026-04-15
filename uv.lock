@@ -1,0 +1,23 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[[package]]
+name = "psycopg"
+version = "3.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/2a/1d/77fd95c963b8e066de8b49e592e7e912ae53a24275f04a4d5279f67e454a/psycopg-3.0.tar.gz", hash = "sha256:82bce906431f44e81d72fbe0b924a71eebec09189bcf0dd16003e33960e36efa", size = 115456, upload-time = "2021-10-12T16:23:56.832Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d8/31/9ce982570ebb20d092ba4d029ed2702634789bc0cc8deb0c09ba6e22e4db/psycopg-3.0-py3-none-any.whl", hash = "sha256:65b9fb8838dae61040ad3e0cfc184d4ffd17f740ef4c0353d76050a6eb061a9c", size = 140812, upload-time = "2021-10-12T16:20:12.084Z" },
+]
+
+[[package]]
+name = "python-with-postgres"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "psycopg" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "psycopg", specifier = "==3.0.0" }]
